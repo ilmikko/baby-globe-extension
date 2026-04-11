@@ -4,6 +4,20 @@ For Wikipedia's 25th birthday, a cute mascot called Baby Globe was introduced.
 
 I was saddened by the fact that the Baby Globe was no longer there after the birthday celebrations had concluded. So I created a tiny browser extension to bring Baby Globe to every website, so you can browse the whole World Wide Web with Baby Globe!
 
+## Installation
+
+Currently, the only way to install the Baby Globe Extension is to [build](#building) the extension locally to get a zip file.
+
+You can then go to Firefox's about:debugging page, and load it as a temporary extension.
+
+## Building
+
+Simply run `make` in the same directory as the README.md.
+
+```
+$ make
+```
+
 ## Licenses
 
 The Baby Globe graphics are licensed under the Creative Commons Attribution-Share Alike 4.0 International license.
