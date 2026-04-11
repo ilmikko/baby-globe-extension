@@ -1,0 +1,37 @@
+{
+	"manifest_version": 3,
+	"name": "Baby Globe",
+	"version": "0.1",
+	"description": "Explore the World Wide Web together with Baby Globe.",
+	"icons": {
+		"16": "img/icon.16.png",
+		"48": "img/icon.48.png",
+		"96": "img/icon.96.png"
+	},
+	"action": {
+		"default_popup": "src/default/popup.html",
+		"default_title": "Bwee",
+		"default_icon": {
+			"16": "img/icon.16.png",
+			"48": "img/icon.48.png",
+			"96": "img/icon.96.png"
+		},
+		"theme_icons": [
+			{
+				"light": "img/icon.16.light.png",
+				"dark": "img/icon.16.png",
+				"size": 16
+			},
+			{
+				"light": "img/icon.48.light.png",
+				"dark": "img/icon.48.png",
+				"size": 48
+			},
+			{
+				"light": "img/icon.96.light.png",
+				"dark": "img/icon.96.png",
+				"size": 96
+			}
+		]
+	}
+}
