@@ -24,6 +24,14 @@
 		"48": "img/icon.48.png",
 		"96": "img/icon.96.png"
 	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "babyglobe@mozilla.org",
+			"data_collection_permissions": {
+				"required": ["none"]
+			}
+		}
+	},
 	"action": {
 		"default_popup": "src/popup/popup.html",
 		"default_title": "Baby Globe",
