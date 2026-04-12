@@ -16,6 +16,7 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
 - [ ] Make Baby Globe moveable with the mouse
 - [ ] Make Baby Globe contextually thematically aware, appearing a certain way based on the website.
   - Example: Play music on a music site, read a book on a book webpage
+- [ ] Figure out how to get Neutral Baby Globe to have a transparent background
 
 ## Installation
 

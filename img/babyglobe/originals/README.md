@@ -14,3 +14,4 @@ baby_globe_book_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s
 baby_globe_laptop_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_-_Phone_Baby_Globe.gif |
 baby_globe_newspaper_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_--_Newspaper_Baby_Globe.gif |
 baby_globe_headphones_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_-_Headphones_Baby_Globe.gif |
+baby_globe_phone_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_-_Phone_Baby_Globe.gif |
