@@ -4,6 +4,8 @@ For Wikipedia's 25th birthday, a cute mascot called Baby Globe was introduced.
 
 I was saddened by the fact that the Baby Globe was no longer there after the birthday celebrations had concluded. So I created a tiny browser extension to bring Baby Globe to every website, and you can browse the whole World Wide Web with Baby Globe!
 
+![Screenshot of Baby Globe in the bottom left corner of a Wikipedia page](./img/screenshot.png?raw=true)
+
 ## TODOs
 
 - [ ] Add more Baby Globes
