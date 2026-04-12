@@ -8,7 +8,21 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
 
 ## TODOs
 
-- [ ] Add more Baby Globes
+- [ ] In Progress: Add more Baby Globes
+  - [x] Newspaper Baby Globe
+  - [x] Laptop Baby Globe
+  - [x] Book Baby Globe
+  - [x] Headphones Baby Globe
+  - [x] Phone Baby Globe
+  - [ ] Celebration Baby Globe
+  - [ ] Camera Baby Globe
+  - [ ] Dream Baby Globe
+  - [ ] Outer Space Baby Globe
+  - [ ] Synthesizer Baby Globe
+  - [ ] Neutral Baby Globe (?)
+    - [ ] Figure out how to give Neutral Baby Globe a transparent background
+  - [ ] Flashlight Baby Globe (?)
+    - [ ] Unsure which context this would work
 - [ ] Add click animations to relevant Baby Globes
   - [x] Headphones Baby Globe
 - [ ] Create a proper grownup browser extension
@@ -16,7 +30,6 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
 - [ ] Make Baby Globe moveable with the mouse
 - [ ] Make Baby Globe contextually thematically aware, appearing a certain way based on the website.
   - Example: Play music on a music site, read a book on a book webpage
-- [ ] Figure out how to get Neutral Baby Globe to have a transparent background
 
 ## Installation
 
