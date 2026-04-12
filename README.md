@@ -32,3 +32,14 @@ The Baby Globe graphics are licensed under the Creative Commons Attribution-Shar
 For full attribution, please see: https://commons.wikimedia.org/wiki/Baby_Globe
 
 The source code of this project is licensed using the GPL-3.0 license.
+
+## Changelog
+
+### v0.2
+
+- Only include necessary files in the extension zip
+- Add Book Baby Globe and Newspaper Baby Globe
+
+### v0.1
+
+- MVP; Initial browser extension version with Laptop Baby Globe
