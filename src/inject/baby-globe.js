@@ -1,9 +1,17 @@
-let $extend = (a, b) => { for (k in b) a[k]=b[k]; return a; }
+const $extend = (a, b) => { for (k in b) a[k]=b[k]; return a; }
 
-let $make = (type, o) => {
+const $make = (type, o) => {
 	let t = document.createElement(type);
 	return $extend(t, o);
 };
+
+const $sample = (a) => a[Math.floor(Math.random() * a.length)];
+
+const BABY_GLOBES = [
+	browser.runtime.getURL("img/babyglobe/baby_globe_book.gif"),
+	browser.runtime.getURL("img/babyglobe/baby_globe_laptop.gif"),
+	browser.runtime.getURL("img/babyglobe/baby_globe_newspaper.gif"),
+];
 
 const BabyGlobe = (function BabyGlobe() {
 	let element = $make('div', {
@@ -11,7 +19,7 @@ const BabyGlobe = (function BabyGlobe() {
 	});
 
 	let image = $make('img', {
-		src: browser.runtime.getURL("img/babyglobe/baby_globe_laptop.gif"),
+		src: $sample(BABY_GLOBES),
 		className: "image",
 	});
 	element.appendChild(image);

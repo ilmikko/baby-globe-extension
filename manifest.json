@@ -16,7 +16,11 @@
 	"web_accessible_resources": [
 		{
 			"matches": ["<all_urls>"],
-			"resources": ["img/babyglobe/baby_globe_laptop.gif"]
+			"resources": [
+				"img/babyglobe/baby_globe_book.gif",
+				"img/babyglobe/baby_globe_laptop.gif",
+				"img/babyglobe/baby_globe_newspaper.gif"
+			]
 		}
 	],
 	"icons": {

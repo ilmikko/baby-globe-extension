@@ -4,8 +4,12 @@ The Baby Globe graphics are licensed under the Creative Commons Attribution-Shar
 
 They are licensed under the Creative Commons Attribution-Share Alike 4.0 International license.
 
+Full sources can be found on: https://commons.wikimedia.org/wiki/Category:Animated_GIF_files_of_Baby_Globe
+
 Below, you can find the source for each file in this directory.
 
 file | source |
 -----|--------|
+baby_globe_book_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_--_Book_Baby_Globe.gif |
 baby_globe_laptop_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_-_Phone_Baby_Globe.gif |
+baby_globe_newspaper_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_--_Newspaper_Baby_Globe.gif |
