@@ -9,6 +9,7 @@ const $sample = (a) => a[Math.floor(Math.random() * a.length)];
 
 const BABY_GLOBES = [
 	browser.runtime.getURL("img/babyglobe/baby_globe_book.gif"),
+	browser.runtime.getURL("img/babyglobe/baby_globe_headphones.gif"),
 	browser.runtime.getURL("img/babyglobe/baby_globe_laptop.gif"),
 	browser.runtime.getURL("img/babyglobe/baby_globe_newspaper.gif"),
 ];
