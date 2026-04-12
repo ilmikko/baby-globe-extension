@@ -15,14 +15,14 @@ baby_globe_book.gif:
 	magick originals/baby_globe_book_full.gif -coalesce -repage 0x0 -crop 550x550+190+235 -resize 128x128 +repage baby_globe_book.gif
 
 baby_globe_headphones.gif:
-	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop 700x700+200+140 -resize 128x128 +repage temp_frame%03d.png
+	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop 760x760+130+70 -resize 128x128 +repage temp_frame%03d.png
 	# This one is made up of frames 0..23 of the full animation. Remove the rest.
 	for i in $$(seq 24 77); do rm temp_frame"$$(printf "%03d" "$$i")".png; done
 	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_headphones.gif
 	rm temp_frame*.png
 
 baby_globe_headphones_click.gif:
-	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop 700x700+200+140 -resize 128x128 +repage temp_frame%03d.png
+	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop 760x760+130+70 -resize 128x128 +repage temp_frame%03d.png
 	# Move frames 0..23 to the end of the animation.
 	for i in $$(seq 0 23); do mv temp_frame{,1}"$$(printf "%03d" "$$i")".png; done
 	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_headphones_click.gif
