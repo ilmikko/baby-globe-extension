@@ -5,4 +5,12 @@ icons:
 
 build:
 	! test -f baby-globe-extension.zip || rm -f baby-globe-extension.zip;
-	zip -r baby-globe-extension.zip --compression-method deflate -- *;
+	zip -r baby-globe-extension.zip --compression-method deflate -- \
+		LICENSE \
+		README.md \
+		manifest.json \
+		img/icon.*.png \
+		img/babyglobe/*.gif \
+		src/popup/* \
+		src/inject/* \
+		;
