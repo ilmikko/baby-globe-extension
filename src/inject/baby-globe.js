@@ -15,18 +15,18 @@ const BABY_GLOBES = [
 
 const BabyGlobe = (function BabyGlobe() {
 	let element = $make('div', {
-		className: "babyglobe ext",
+		className: "babyglobe-ext",
 	});
 
 	let image = $make('img', {
 		src: $sample(BABY_GLOBES),
-		className: "image",
+		className: "babyglobe-image",
 	});
 	element.appendChild(image);
 
 	let message = $make('div', {
 		textContent: '',
-		className: "message",
+		className: "babyglobe-message",
 	});
 	element.appendChild(message);
 
