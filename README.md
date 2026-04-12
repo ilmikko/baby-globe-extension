@@ -10,12 +10,12 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
 
 - [ ] Add more Baby Globes
 - [ ] Add click animations to relevant Baby Globes
-  - [ ] In progress: Headphones Baby Globe
+  - [x] Headphones Baby Globe
 - [ ] Create a proper grownup browser extension
   - [ ] In progress: Submit the extension to Mozilla addons
+- [ ] Make Baby Globe moveable with the mouse
 - [ ] Make Baby Globe contextually thematically aware, appearing a certain way based on the website.
   - Example: Play music on a music site, read a book on a book webpage
-- [ ] Make Baby Globe moveable with the mouse
 
 ## Installation
 
@@ -40,6 +40,11 @@ For full attribution, please see: https://commons.wikimedia.org/wiki/Baby_Globe
 The source code of this project is licensed using the GPL-3.0 license.
 
 ## Changelog
+
+### v0.3
+
+- Added Headphones Baby Globe
+- Added click support for certain Baby Globes
 
 ### v0.2
 
