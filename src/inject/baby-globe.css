@@ -1,3 +1,15 @@
+@keyframes baby_globe_headphones_click {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(1deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
 .babyglobe-ext {
 	position: fixed;
 	bottom: 0;

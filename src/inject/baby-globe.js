@@ -7,39 +7,64 @@ const $make = (type, o) => {
 
 const $sample = (a) => a[Math.floor(Math.random() * a.length)];
 
+const $urlOrNull = (u) => {
+	if (u == null) return null;
+
+	// Use a random query parameter to make sure the gif resets every time.
+	return browser.runtime.getURL('img/babyglobe/' + u + '.gif') + '?r=' + Math.random();
+}
+
+function BabyGlobe(idle, click, animation) {
+	this.idle = idle;
+	this.click = click;
+	this.animation = animation;
+}
+
+BabyGlobe.prototype = {
+	bind: function(root) {
+		const element = $make('div', {
+			className: 'babyglobe-ext',
+		});
+
+		const image = $make('img', {
+			src: $urlOrNull(this.idle),
+			className: 'babyglobe-image',
+		});
+		element.appendChild(image);
+
+		image.addEventListener('animationend', evt => {
+			// Reset animation after it ends.
+			image.src = $urlOrNull(this.idle);
+			image.style.animation = '';
+		});
+
+		image.addEventListener('click', evt => {
+			// If click is null, do nothing.
+			if (!this.click) return;
+
+			// If already clicked, do nothing.
+			if (image.style.animation != '') return;
+
+			image.src = $urlOrNull(this.click);
+			// Use the CSS animation to time the gif.
+			image.style.animation = this.click + ' ' + this.animation;
+		});
+
+		const message = $make('div', {
+			textContent: '',
+			className: 'babyglobe-message',
+		});
+		element.appendChild(message);
+
+		root.appendChild(element);
+	},
+}
+
 const BABY_GLOBES = [
-	browser.runtime.getURL("img/babyglobe/baby_globe_book.gif"),
-	browser.runtime.getURL("img/babyglobe/baby_globe_headphones.gif"),
-	browser.runtime.getURL("img/babyglobe/baby_globe_laptop.gif"),
-	browser.runtime.getURL("img/babyglobe/baby_globe_newspaper.gif"),
+	new BabyGlobe('baby_globe_book', null, null),
+	new BabyGlobe('baby_globe_headphones', 'baby_globe_headphones_click', 'ease-in 2700ms'),
+	new BabyGlobe('baby_globe_laptop', null, null),
+	new BabyGlobe('baby_globe_newspaper', null, null),
 ];
 
-const BabyGlobe = (function BabyGlobe() {
-	let element = $make('div', {
-		className: "babyglobe-ext",
-	});
-
-	let image = $make('img', {
-		src: $sample(BABY_GLOBES),
-		className: "babyglobe-image",
-	});
-	element.appendChild(image);
-
-	let message = $make('div', {
-		textContent: '',
-		className: "babyglobe-message",
-	});
-	element.appendChild(message);
-
-	element.addEventListener('animationend', evt => {
-		image.style.animation = '';
-	});
-
-	element.addEventListener('click', evt => {
-		/* TODO: Animation */
-	});
-
-	document.body.appendChild(element);
-
-	return {};
-})();
+$sample(BABY_GLOBES).bind(document.body);
