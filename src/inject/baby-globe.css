@@ -10,6 +10,10 @@
 	}
 }
 
+.babyglobe-clickable.babyglobe-image {
+	cursor: pointer;
+}
+
 .babyglobe-ext {
 	position: fixed;
 	bottom: 0;

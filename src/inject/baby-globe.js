@@ -30,6 +30,10 @@ BabyGlobe.prototype = {
 			src: $urlOrNull(this.idle),
 			className: 'babyglobe-image',
 		});
+		// Indicate that this Baby Globe is clickable.
+		if (this.click) {
+			image.classList.add('babyglobe-clickable');
+		}
 		element.appendChild(image);
 
 		image.addEventListener('animationend', evt => {
