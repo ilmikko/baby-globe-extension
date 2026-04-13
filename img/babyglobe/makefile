@@ -88,8 +88,11 @@ baby_globe_outer_space.gif:
 baby_globe_phone.gif:
 	magick originals/baby_globe_phone_full.gif -coalesce -repage 0x0 -crop 580x580+260+285 -resize 128x128 +repage baby_globe_phone.gif
 
+synthesizer_crop = 780x780+180+0
+synthesizer_size = 170x170
+
 baby_globe_synthesizer.gif:
-	magick originals/baby_globe_synthesizer_full.gif -coalesce -repage 0x0 -crop 780x780+180+0 -resize 128x128 +repage temp_frame%03d.png
+	magick originals/baby_globe_synthesizer_full.gif -coalesce -repage 0x0 -crop $(synthesizer_crop) -resize $(synthesizer_size) +repage temp_frame%03d.png
 	# Frames: 0..143
 	# This one is made up of frames 0..47 of the full animation. Remove the rest.
 	for i in $$(seq 48 143); do rm temp_frame"$$(printf "%03d" "$$i")".png; done
@@ -97,7 +100,7 @@ baby_globe_synthesizer.gif:
 	rm temp_frame*.png
 
 baby_globe_synthesizer_click.gif:
-	magick originals/baby_globe_synthesizer_full.gif -coalesce -repage 0x0 -crop 780x780+180+0 -resize 128x128 +repage temp_frame%04d.png
+	magick originals/baby_globe_synthesizer_full.gif -coalesce -repage 0x0 -crop $(synthesizer_crop) -resize $(synthesizer_size) +repage temp_frame%04d.png
 	# Frames: 0..143
 	# Move frames 0..47 to the end of the animation.
 	for i in $$(seq 0 47); do mv temp_frame{,1}"$$(printf "%04d" "$$i")".png; done
