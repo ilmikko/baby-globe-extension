@@ -9,6 +9,7 @@ all: \
 	baby_globe_headphones_click.gif \
 	baby_globe_laptop.gif \
 	baby_globe_newspaper.gif \
+	baby_globe_outer_space.gif \
 	baby_globe_phone.gif \
 	baby_globe_synthesizer.gif \
 	baby_globe_synthesizer_click.gif \
@@ -64,6 +65,9 @@ baby_globe_laptop.gif:
 
 baby_globe_newspaper.gif:
 	magick originals/baby_globe_newspaper_full.gif -coalesce -repage 0x0 -crop 620x620+190+225 -resize 128x128 +repage baby_globe_newspaper.gif
+
+baby_globe_outer_space.gif:
+	magick originals/baby_globe_outer_space_full.gif -coalesce -repage 0x0 -crop 780x780+140+85 -resize 128x128 +repage baby_globe_outer_space.gif
 
 baby_globe_phone.gif:
 	magick originals/baby_globe_phone_full.gif -coalesce -repage 0x0 -crop 580x580+260+285 -resize 128x128 +repage baby_globe_phone.gif

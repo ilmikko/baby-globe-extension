@@ -18,5 +18,6 @@ baby_globe_celebration_full.gif | https://upload.wikimedia.org/wikipedia/commons
 baby_globe_headphones_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_-_Headphones_Baby_Globe.gif |
 baby_globe_laptop_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia's_25th_birthday_mascot_-_Laptop_Baby_Globe.gif |
 baby_globe_newspaper_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_--_Newspaper_Baby_Globe.gif |
+baby_globe_outer_space_full.gif | https://upload.wikimedia.org/wikipedia/commons/8/8a/Wikipedia%27s_25th_birthday_mascot_-_Outer_Space_Baby_Globe.gif |
 baby_globe_phone_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_-_Phone_Baby_Globe.gif |
 baby_globe_synthesizer_full.gif | https://upload.wikimedia.org/wikipedia/commons/a/af/Wikipedia%27s_25th_birthday_mascot_-_Synthesizer_Baby_Globe.gif |

@@ -73,6 +73,7 @@ const BABY_GLOBES = [
 	new BabyGlobe('baby_globe_headphones', 'baby_globe_headphones_click', 'ease-in 2700ms'),
 	new BabyGlobe('baby_globe_laptop', null, null),
 	new BabyGlobe('baby_globe_newspaper', null, null),
+	new BabyGlobe('baby_globe_outer_space', null, null),
 	new BabyGlobe('baby_globe_phone', null, null),
 	new BabyGlobe('baby_globe_synthesizer', 'baby_globe_synthesizer_click', 'ease-in 4900ms'),
 ];
