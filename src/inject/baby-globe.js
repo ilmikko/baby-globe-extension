@@ -14,10 +14,14 @@ const $urlOrNull = (u) => {
 	return browser.runtime.getURL('img/babyglobe/' + u + '.gif') + '?r=' + Math.random();
 }
 
-function BabyGlobe(idle, click, animation) {
+function Animation(name, delay) {
+	this.name = name;
+	this.delay = delay;
+}
+
+function BabyGlobe(idle, animations) {
 	this.idle = idle;
-	this.click = click;
-	this.animation = animation;
+	this.animations = animations || [];
 }
 
 BabyGlobe.prototype = {
@@ -31,7 +35,7 @@ BabyGlobe.prototype = {
 			className: 'babyglobe-image',
 		});
 		// Indicate that this Baby Globe is clickable.
-		if (this.click) {
+		if (this.animations.length) {
 			image.classList.add('babyglobe-clickable');
 		}
 		element.appendChild(image);
@@ -44,14 +48,16 @@ BabyGlobe.prototype = {
 
 		image.addEventListener('click', evt => {
 			// If click is null, do nothing.
-			if (!this.click) return;
+			if (this.animations.length == 0) return;
 
 			// If already clicked, do nothing.
 			if (image.style.animation != '') return;
 
-			image.src = $urlOrNull(this.click);
+			let animation = $sample(this.animations);
+
+			image.src = $urlOrNull(animation.name);
 			// Use the CSS animation to time the gif.
-			image.style.animation = this.click + ' ' + this.animation;
+			image.style.animation = animation.name + ' ' + animation.delay;
 		});
 
 		const message = $make('div', {
@@ -65,17 +71,25 @@ BabyGlobe.prototype = {
 }
 
 const BABY_GLOBES = [
-	new BabyGlobe('baby_globe_book', null, null),
-	new BabyGlobe('baby_globe_camera', 'baby_globe_camera_click', 'ease-in 1000ms'),
-	// TODO: add balloons
-	new BabyGlobe('baby_globe_celebration', 'baby_globe_celebration_confetti', 'ease-in 2350ms'),
-	new BabyGlobe('baby_globe_dream', null, null),
-	new BabyGlobe('baby_globe_headphones', 'baby_globe_headphones_click', 'ease-in 2700ms'),
-	new BabyGlobe('baby_globe_laptop', null, null),
-	new BabyGlobe('baby_globe_newspaper', null, null),
-	new BabyGlobe('baby_globe_outer_space', null, null),
-	new BabyGlobe('baby_globe_phone', null, null),
-	new BabyGlobe('baby_globe_synthesizer', 'baby_globe_synthesizer_click', 'ease-in 4900ms'),
+	new BabyGlobe('baby_globe_book'),
+	new BabyGlobe('baby_globe_camera', [
+		new Animation('baby_globe_camera_click', 'ease-in 1000ms'),
+	]),
+	new BabyGlobe('baby_globe_celebration', [
+		new Animation('baby_globe_celebration_balloons', 'ease-in 4900ms'),
+		new Animation('baby_globe_celebration_confetti', 'ease-in 2350ms'),
+	]),
+	new BabyGlobe('baby_globe_dream'),
+	new BabyGlobe('baby_globe_headphones', [
+		new Animation('baby_globe_headphones_click', 'ease-in 2700ms'),
+	]),
+	new BabyGlobe('baby_globe_laptop'),
+	new BabyGlobe('baby_globe_newspaper'),
+	new BabyGlobe('baby_globe_outer_space'),
+	new BabyGlobe('baby_globe_phone'),
+	new BabyGlobe('baby_globe_synthesizer', [
+		new Animation('baby_globe_synthesizer_click', 'ease-in 4900ms'),
+	]),
 ];
 
 $sample(BABY_GLOBES).bind(document.body);

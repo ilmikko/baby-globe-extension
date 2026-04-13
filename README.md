@@ -14,8 +14,7 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
   - [x] Book Baby Globe
   - [x] Headphones Baby Globe
   - [x] Phone Baby Globe
-  - [ ] Celebration Baby Globe
-    - TODO: Need to add balloons too.
+  - [x] Celebration Baby Globe (with both balloons and confetti)
   - [x] Camera Baby Globe
   - [x] Dream Baby Globe
   - [x] Outer Space Baby Globe
@@ -24,9 +23,7 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
     - [ ] Figure out how to give Neutral Baby Globe a transparent background
   - [ ] Flashlight Baby Globe (?)
     - [ ] Unsure which context this would work
-- [ ] Add click animations to relevant Baby Globes
-  - [x] Headphones Baby Globe
-  - [x] Camera Baby Globe
+- [x] Add click animations to relevant Baby Globes
 - [ ] Create a proper grownup browser extension
   - [ ] In progress: Submit the extension to Mozilla addons
 - [ ] Make Baby Globe moveable with the mouse
