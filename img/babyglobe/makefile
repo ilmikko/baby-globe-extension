@@ -38,14 +38,17 @@ baby_globe_camera_click.gif:
 	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_camera_click.gif
 	rm temp_frame*.png
 
+celebration_crop = 880x880+65-55
+celebration_size = 195x195
+
 baby_globe_celebration.gif:
-	magick originals/baby_globe_celebration_full.gif -coalesce -repage 0x0 -crop 650x650+230+175 -resize 128x128 +repage baby_globe_celebration.gif
+	magick originals/baby_globe_celebration_full.gif -coalesce -repage 0x0 -crop $(celebration_crop) -resize $(celebration_size) +repage baby_globe_celebration.gif
 
 baby_globe_celebration_balloons.gif:
-	magick originals/baby_globe_celebration_balloons_full.gif -coalesce -repage 0x0 -crop 650x650+230+175 -resize 128x128 +repage baby_globe_celebration_balloons.gif
+	magick originals/baby_globe_celebration_balloons_full.gif -coalesce -repage 0x0 -crop $(celebration_crop) -resize $(celebration_size) +repage baby_globe_celebration_balloons.gif
 
 baby_globe_celebration_confetti.gif:
-	magick originals/baby_globe_celebration_confetti_full.gif -coalesce -repage 0x0 -crop 650x650+230+175 -resize 128x128 +repage baby_globe_celebration_confetti.gif
+	magick originals/baby_globe_celebration_confetti_full.gif -coalesce -repage 0x0 -crop $(celebration_crop) -resize $(celebration_size) +repage baby_globe_celebration_confetti.gif
 
 baby_globe_dream.gif:
 	magick originals/baby_globe_dream_full.gif -coalesce -repage 0x0 -crop 810x810+180+30 -resize 128x128 +repage baby_globe_dream.gif
