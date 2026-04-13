@@ -25,14 +25,14 @@ baby_globe_book.gif:
 	magick originals/baby_globe_book_full.gif -coalesce -repage 0x0 -crop 550x550+190+235 -resize 128x128 +repage baby_globe_book.gif
 
 baby_globe_camera.gif:
-	magick originals/baby_globe_camera_full.gif -coalesce -repage 0x0 -crop 760x760+130+50 -resize 128x128 +repage temp_frame%03d.png
+	magick originals/baby_globe_camera_full.gif -coalesce -repage 0x0 -crop 760x760+130+50 -resize 168x168 +repage temp_frame%03d.png
 	# This one is made up of frames 0..71 of the full animation. Remove the rest.
 	for i in $$(seq 72 95); do rm temp_frame"$$(printf "%03d" "$$i")".png; done
 	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_camera.gif
 	rm temp_frame*.png
 
 baby_globe_camera_click.gif:
-	magick originals/baby_globe_camera_full.gif -coalesce -repage 0x0 -crop 760x760+130+50 -resize 128x128 +repage temp_frame%03d.png
+	magick originals/baby_globe_camera_full.gif -coalesce -repage 0x0 -crop 760x760+130+50 -resize 168x168 +repage temp_frame%03d.png
 	# Move frames 0..72 to the end of the animation.
 	for i in $$(seq 0 72); do mv temp_frame{,1}"$$(printf "%03d" "$$i")".png; done
 	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_camera_click.gif
