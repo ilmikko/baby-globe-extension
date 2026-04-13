@@ -15,6 +15,8 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
   - [x] Headphones Baby Globe
   - [x] Phone Baby Globe
   - [ ] Celebration Baby Globe
+    - TODO: Need to figure out how to deal with the confetti cropping.
+    - TODO: Need to add balloons too.
   - [x] Camera Baby Globe
   - [ ] Dream Baby Globe
   - [ ] Outer Space Baby Globe
@@ -25,6 +27,7 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
     - [ ] Unsure which context this would work
 - [ ] Add click animations to relevant Baby Globes
   - [x] Headphones Baby Globe
+  - [x] Camera Baby Globe
 - [ ] Create a proper grownup browser extension
   - [ ] In progress: Submit the extension to Mozilla addons
 - [ ] Make Baby Globe moveable with the mouse
