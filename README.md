@@ -15,7 +15,6 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
   - [x] Headphones Baby Globe
   - [x] Phone Baby Globe
   - [ ] Celebration Baby Globe
-    - TODO: Need to figure out how to deal with the confetti cropping.
     - TODO: Need to add balloons too.
   - [x] Camera Baby Globe
   - [x] Dream Baby Globe
