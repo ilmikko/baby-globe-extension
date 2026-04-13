@@ -20,7 +20,7 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
   - [x] Camera Baby Globe
   - [ ] Dream Baby Globe
   - [ ] Outer Space Baby Globe
-  - [ ] Synthesizer Baby Globe
+  - [x] Synthesizer Baby Globe
   - [ ] Neutral Baby Globe (?)
     - [ ] Figure out how to give Neutral Baby Globe a transparent background
   - [ ] Flashlight Baby Globe (?)
@@ -57,6 +57,13 @@ For full attribution, please see: https://commons.wikimedia.org/wiki/Baby_Globe
 The source code of this project is licensed using the GPL-3.0 license.
 
 ## Changelog
+
+### v0.4
+
+- Added Camera Baby Globe
+- Added Celebration Baby Globe
+- Added Synthesizer Baby Globe
+- Added Phone Baby Globe
 
 ### v0.3
 
