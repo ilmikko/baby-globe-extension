@@ -11,6 +11,7 @@ Below, you can find the source for each file in this directory.
 file | source |
 -----|--------|
 baby_globe_book_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_--_Book_Baby_Globe.gif |
+baby_globe_camera_full.gif | https://upload.wikimedia.org/wikipedia/commons/2/20/Wikipedia%27s_25th_birthday_mascot_-_Camera_Baby_Globe.gif |
 baby_globe_laptop_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia's_25th_birthday_mascot_-_Laptop_Baby_Globe.gif |
 baby_globe_newspaper_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_--_Newspaper_Baby_Globe.gif |
 baby_globe_headphones_full.gif | https://commons.wikimedia.org/wiki/File:Wikipedia%27s_25th_birthday_mascot_-_Headphones_Baby_Globe.gif |

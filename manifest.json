@@ -18,6 +18,7 @@
 			"matches": ["<all_urls>"],
 			"resources": [
 				"img/babyglobe/baby_globe_book.gif",
+				"img/babyglobe/baby_globe_camera.gif",
 				"img/babyglobe/baby_globe_headphones.gif",
 				"img/babyglobe/baby_globe_headphones_click.gif",
 				"img/babyglobe/baby_globe_laptop.gif",
