@@ -18,8 +18,8 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
     - TODO: Need to figure out how to deal with the confetti cropping.
     - TODO: Need to add balloons too.
   - [x] Camera Baby Globe
-  - [ ] Dream Baby Globe
-  - [ ] Outer Space Baby Globe
+  - [x] Dream Baby Globe
+  - [x] Outer Space Baby Globe
   - [x] Synthesizer Baby Globe
   - [ ] Neutral Baby Globe (?)
     - [ ] Figure out how to give Neutral Baby Globe a transparent background

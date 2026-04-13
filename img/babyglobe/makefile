@@ -5,6 +5,7 @@ all: \
 	baby_globe_celebration.gif \
 	baby_globe_celebration_balloons.gif \
 	baby_globe_celebration_confetti.gif \
+	baby_globe_dream.gif \
 	baby_globe_headphones.gif \
 	baby_globe_headphones_click.gif \
 	baby_globe_laptop.gif \
@@ -45,6 +46,9 @@ baby_globe_celebration_balloons.gif:
 
 baby_globe_celebration_confetti.gif:
 	magick originals/baby_globe_celebration_confetti_full.gif -coalesce -repage 0x0 -crop 650x650+230+175 -resize 128x128 +repage baby_globe_celebration_confetti.gif
+
+baby_globe_dream.gif:
+	magick originals/baby_globe_dream_full.gif -coalesce -repage 0x0 -crop 810x810+180+30 -resize 128x128 +repage baby_globe_dream.gif
 
 baby_globe_headphones.gif:
 	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop 760x760+130+70 -resize 128x128 +repage temp_frame%03d.png
