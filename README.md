@@ -54,6 +54,12 @@ The source code of this project is licensed using the GPL-3.0 license.
 
 ## Changelog
 
+### v1.0
+
+- All common Baby Globes are added!
+- Resized Baby Globes to a common size
+- Included click animations to clickable Baby Globes
+
 ### v0.4
 
 - Added Camera Baby Globe
