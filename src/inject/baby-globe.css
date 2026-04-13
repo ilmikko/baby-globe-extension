@@ -34,6 +34,15 @@
 	}
 }
 
+@keyframes baby_globe_synthesizer_click {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
 .babyglobe-clickable.babyglobe-image {
 	cursor: pointer;
 }

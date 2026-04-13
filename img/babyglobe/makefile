@@ -11,6 +11,7 @@ all: \
 	baby_globe_newspaper.gif \
 	baby_globe_phone.gif \
 	baby_globe_synthesizer.gif \
+	baby_globe_synthesizer_click.gif \
 	;
 
 clean:
@@ -73,4 +74,12 @@ baby_globe_synthesizer.gif:
 	# This one is made up of frames 0..47 of the full animation. Remove the rest.
 	for i in $$(seq 48 143); do rm temp_frame"$$(printf "%03d" "$$i")".png; done
 	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_synthesizer.gif
+	rm temp_frame*.png
+
+baby_globe_synthesizer_click.gif:
+	magick originals/baby_globe_synthesizer_full.gif -coalesce -repage 0x0 -crop 780x780+180+0 -resize 128x128 +repage temp_frame%04d.png
+	# Frames: 0..143
+	# Move frames 0..47 to the end of the animation.
+	for i in $$(seq 0 47); do mv temp_frame{,1}"$$(printf "%04d" "$$i")".png; done
+	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_synthesizer_click.gif
 	rm temp_frame*.png

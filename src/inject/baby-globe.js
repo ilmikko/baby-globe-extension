@@ -74,7 +74,7 @@ const BABY_GLOBES = [
 	new BabyGlobe('baby_globe_laptop', null, null),
 	new BabyGlobe('baby_globe_newspaper', null, null),
 	new BabyGlobe('baby_globe_phone', null, null),
-	new BabyGlobe('baby_globe_synthesizer', null, null),
+	new BabyGlobe('baby_globe_synthesizer', 'baby_globe_synthesizer_click', 'ease-in 4900ms'),
 ];
 
 $sample(BABY_GLOBES).bind(document.body);
