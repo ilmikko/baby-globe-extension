@@ -67,6 +67,9 @@ BabyGlobe.prototype = {
 const BABY_GLOBES = [
 	new BabyGlobe('baby_globe_book', null, null),
 	new BabyGlobe('baby_globe_camera', 'baby_globe_camera_click', 'ease-in 1000ms'),
+	new BabyGlobe('baby_globe_celebration', null, null),
+	// TODO: Re-crop confetti, add balloons
+	// new BabyGlobe('baby_globe_celebration', 'baby_globe_celebration_confetti', 'ease-in 2350ms'),
 	new BabyGlobe('baby_globe_headphones', 'baby_globe_headphones_click', 'ease-in 2700ms'),
 	new BabyGlobe('baby_globe_laptop', null, null),
 	new BabyGlobe('baby_globe_newspaper', null, null),

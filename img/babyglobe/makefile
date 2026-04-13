@@ -2,6 +2,9 @@ all: \
 	baby_globe_book.gif \
 	baby_globe_camera.gif \
 	baby_globe_camera_click.gif \
+	baby_globe_celebration.gif \
+	baby_globe_celebration_balloons.gif \
+	baby_globe_celebration_confetti.gif \
 	baby_globe_headphones.gif \
 	baby_globe_headphones_click.gif \
 	baby_globe_laptop.gif \
@@ -30,6 +33,15 @@ baby_globe_camera_click.gif:
 	for i in $$(seq 0 72); do mv temp_frame{,1}"$$(printf "%03d" "$$i")".png; done
 	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_camera_click.gif
 	rm temp_frame*.png
+
+baby_globe_celebration.gif:
+	magick originals/baby_globe_celebration_full.gif -coalesce -repage 0x0 -crop 650x650+230+175 -resize 128x128 +repage baby_globe_celebration.gif
+
+baby_globe_celebration_balloons.gif:
+	magick originals/baby_globe_celebration_balloons_full.gif -coalesce -repage 0x0 -crop 650x650+230+175 -resize 128x128 +repage baby_globe_celebration_balloons.gif
+
+baby_globe_celebration_confetti.gif:
+	magick originals/baby_globe_celebration_confetti_full.gif -coalesce -repage 0x0 -crop 650x650+230+175 -resize 128x128 +repage baby_globe_celebration_confetti.gif
 
 baby_globe_headphones.gif:
 	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop 760x760+130+70 -resize 128x128 +repage temp_frame%03d.png
