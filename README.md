@@ -15,7 +15,7 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
   - [x] Headphones Baby Globe
   - [x] Phone Baby Globe
   - [ ] Celebration Baby Globe
-  - [ ] Camera Baby Globe
+  - [x] Camera Baby Globe
   - [ ] Dream Baby Globe
   - [ ] Outer Space Baby Globe
   - [ ] Synthesizer Baby Globe

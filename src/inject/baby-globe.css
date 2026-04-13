@@ -1,12 +1,18 @@
 @keyframes baby_globe_headphones_click {
 	0% {
-		transform: rotate(0deg);
-	}
-	50% {
-		transform: rotate(1deg);
+		transform: scale(1);
 	}
 	100% {
-		transform: rotate(0deg);
+		transform: scale(1);
+	}
+}
+
+@keyframes baby_globe_camera_click {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1);
 	}
 }
 
