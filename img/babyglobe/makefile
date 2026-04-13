@@ -50,8 +50,11 @@ baby_globe_celebration_balloons.gif:
 baby_globe_celebration_confetti.gif:
 	magick originals/baby_globe_celebration_confetti_full.gif -coalesce -repage 0x0 -crop $(celebration_crop) -resize $(celebration_size) +repage baby_globe_celebration_confetti.gif
 
+dream_crop = 810x810+180+30
+dream_size = 179x179
+
 baby_globe_dream.gif:
-	magick originals/baby_globe_dream_full.gif -coalesce -repage 0x0 -crop 810x810+180+30 -resize 128x128 +repage baby_globe_dream.gif
+	magick originals/baby_globe_dream_full.gif -coalesce -repage 0x0 -crop $(dream_crop) -resize $(dream_size) +repage baby_globe_dream.gif
 
 baby_globe_headphones.gif:
 	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop 760x760+130+70 -resize 128x128 +repage temp_frame%03d.png
