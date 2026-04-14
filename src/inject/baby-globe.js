@@ -1,4 +1,4 @@
-const $extend = (a, b) => { for (k in b) a[k]=b[k]; return a; }
+const $extend = (a, b) => { for (let k in b) a[k]=b[k]; return a; }
 
 const $make = (type, o) => {
 	let t = document.createElement(type);

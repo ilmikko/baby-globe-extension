@@ -19,90 +19,156 @@ all: \
 clean:
 	rm -f temp_frame*.png
 
-# Baby Globe idle animations.
+# Baby Globe animations.
+#
+# Animations are either resized gifs, or extracted from frames of the
+# full-sized gifs and recompiled to a new gif. The recompile / resize arguments
+# to imagemagick are defined below.
+
+# Arguments for resizing original gifs
+resize_gif = -coalesce -repage 0x0
+# Arguments for compiling frames to a new gif
+recompile_frames = -background transparent -loop 0 -set dispose Background -fuzz 5%
+# 20 frames per second
+recompile_delay = 1x20
+
+book_crop = 550x550+190+235
+book_size = 128x128
 
 baby_globe_book.gif:
-	magick originals/baby_globe_book_full.gif -coalesce -repage 0x0 -crop 550x550+190+235 -resize 128x128 +repage baby_globe_book.gif
+	magick originals/baby_globe_book_full.gif $(resize_gif) \
+		-crop $(book_crop) -resize $(book_size) \
+		+repage baby_globe_book.gif
+
+camera_crop = 760x760+130+50
+camera_size = 168x168
 
 baby_globe_camera.gif:
-	magick originals/baby_globe_camera_full.gif -coalesce -repage 0x0 -crop 760x760+130+50 -resize 168x168 +repage temp_frame%03d.png
+	magick originals/baby_globe_camera_full.gif $(resize_gif) \
+		-crop $(camera_crop) -resize $(camera_size) \
+		+repage temp_frame%04d.png
+	# Total frames: 0..95
 	# This one is made up of frames 0..71 of the full animation. Remove the rest.
-	for i in $$(seq 72 95); do rm temp_frame"$$(printf "%03d" "$$i")".png; done
-	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_camera.gif
+	for i in $$(seq 72 95); do rm temp_frame"$$(printf "%04d" "$$i")".png; done
+	magick -delay $(recompile_delay) temp_frame*.png \
+		$(recompile_frames) baby_globe_camera.gif
 	rm temp_frame*.png
 
 baby_globe_camera_click.gif:
-	magick originals/baby_globe_camera_full.gif -coalesce -repage 0x0 -crop 760x760+130+50 -resize 168x168 +repage temp_frame%03d.png
+	magick originals/baby_globe_camera_full.gif $(resize_gif) \
+		-crop $(camera_crop) -resize $(camera_size) \
+		+repage temp_frame%04d.png
+	# Total frames: 0..95
 	# Move frames 0..72 to the end of the animation.
-	for i in $$(seq 0 72); do mv temp_frame{,1}"$$(printf "%03d" "$$i")".png; done
-	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_camera_click.gif
+	for i in $$(seq 0 72); do mv temp_frame{,1}"$$(printf "%04d" "$$i")".png; done
+	magick -delay $(recompile_delay) temp_frame*.png \
+		$(recompile_frames) baby_globe_camera_click.gif
 	rm temp_frame*.png
 
 celebration_crop = 880x880+65-55
 celebration_size = 195x195
 
 baby_globe_celebration.gif:
-	magick originals/baby_globe_celebration_full.gif -coalesce -repage 0x0 -crop $(celebration_crop) -resize $(celebration_size) +repage baby_globe_celebration.gif
+	magick originals/baby_globe_celebration_full.gif $(resize_gif) \
+		-crop $(celebration_crop) -resize $(celebration_size) \
+		+repage baby_globe_celebration.gif
 
 baby_globe_celebration_balloons.gif:
-	magick originals/baby_globe_celebration_balloons_full.gif -coalesce -repage 0x0 -crop $(celebration_crop) -resize $(celebration_size) +repage baby_globe_celebration_balloons.gif
+	magick originals/baby_globe_celebration_balloons_full.gif $(resize_gif) \
+		-crop $(celebration_crop) -resize $(celebration_size) \
+		+repage baby_globe_celebration_balloons.gif
 
 baby_globe_celebration_confetti.gif:
-	magick originals/baby_globe_celebration_confetti_full.gif -coalesce -repage 0x0 -crop $(celebration_crop) -resize $(celebration_size) +repage baby_globe_celebration_confetti.gif
+	magick originals/baby_globe_celebration_confetti_full.gif $(resize_gif) \
+		-crop $(celebration_crop) -resize $(celebration_size) \
+		+repage baby_globe_celebration_confetti.gif
 
 dream_crop = 810x810+180+30
 dream_size = 179x179
 
 baby_globe_dream.gif:
-	magick originals/baby_globe_dream_full.gif -coalesce -repage 0x0 -crop $(dream_crop) -resize $(dream_size) +repage baby_globe_dream.gif
+	magick originals/baby_globe_dream_full.gif $(resize_gif) \
+		-crop $(dream_crop) -resize $(dream_size) \
+		+repage baby_globe_dream.gif
 
 headphones_crop = 760x760+130+70
 headphones_size = 168x168
 
 baby_globe_headphones.gif:
-	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop $(headphones_crop) -resize $(headphones_size) +repage temp_frame%03d.png
+	magick originals/baby_globe_headphones_full.gif $(resize_gif) \
+		-crop $(headphones_crop) -resize $(headphones_size) \
+		+repage temp_frame%04d.png
+	# Total frames: 0..77
 	# This one is made up of frames 0..23 of the full animation. Remove the rest.
-	for i in $$(seq 24 77); do rm temp_frame"$$(printf "%03d" "$$i")".png; done
-	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_headphones.gif
+	for i in $$(seq 24 77); do rm temp_frame"$$(printf "%04d" "$$i")".png; done
+	magick -delay $(recompile_delay) temp_frame*.png \
+		$(recompile_frames) baby_globe_headphones.gif
 	rm temp_frame*.png
 
 baby_globe_headphones_click.gif:
-	magick originals/baby_globe_headphones_full.gif -coalesce -repage 0x0 -crop $(headphones_crop) -resize $(headphones_size) +repage temp_frame%03d.png
+	magick originals/baby_globe_headphones_full.gif $(resize_gif) \
+		-crop $(headphones_crop) -resize $(headphones_size) \
+		+repage temp_frame%04d.png
+	# Total frames: 0..77
 	# Move frames 0..23 to the end of the animation.
-	for i in $$(seq 0 23); do mv temp_frame{,1}"$$(printf "%03d" "$$i")".png; done
-	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_headphones_click.gif
+	for i in $$(seq 0 23); do mv temp_frame{,1}"$$(printf "%04d" "$$i")".png; done
+	magick -delay $(recompile_delay) temp_frame*.png \
+		$(recompile_frames) baby_globe_headphones_click.gif
 	rm temp_frame*.png
 
+laptop_crop = 620x620+170+285
+laptop_size = 128x128
+
 baby_globe_laptop.gif:
-	magick originals/baby_globe_laptop_full.gif -coalesce -repage 0x0 -crop 620x620+170+285 -resize 128x128 +repage baby_globe_laptop.gif
+	magick originals/baby_globe_laptop_full.gif $(resize_gif) \
+		-crop $(laptop_crop) -resize $(laptop_size) \
+		+repage baby_globe_laptop.gif
+
+newspaper_crop = 620x620+190+225
+newspaper_size = 128x128
 
 baby_globe_newspaper.gif:
-	magick originals/baby_globe_newspaper_full.gif -coalesce -repage 0x0 -crop 620x620+190+225 -resize 128x128 +repage baby_globe_newspaper.gif
+	magick originals/baby_globe_newspaper_full.gif $(resize_gif) \
+		-crop $(newspaper_crop) -resize $(newspaper_size) \
+		+repage baby_globe_newspaper.gif
 
 outer_space_crop = 780x780+140+85
 outer_space_size = 170x170
 
 baby_globe_outer_space.gif:
-	magick originals/baby_globe_outer_space_full.gif -coalesce -repage 0x0 -crop $(outer_space_crop) -resize $(outer_space_size) +repage baby_globe_outer_space.gif
+	magick originals/baby_globe_outer_space_full.gif $(resize_gif) \
+		-crop $(outer_space_crop) -resize $(outer_space_size) \
+		+repage baby_globe_outer_space.gif
+
+phone_crop = 580x580+260+285
+phone_size = 128x128
 
 baby_globe_phone.gif:
-	magick originals/baby_globe_phone_full.gif -coalesce -repage 0x0 -crop 580x580+260+285 -resize 128x128 +repage baby_globe_phone.gif
+	magick originals/baby_globe_phone_full.gif $(resize_gif) \
+		-crop $(phone_crop) -resize $(phone_size) \
+		+repage baby_globe_phone.gif
 
 synthesizer_crop = 780x780+180+0
 synthesizer_size = 170x170
 
 baby_globe_synthesizer.gif:
-	magick originals/baby_globe_synthesizer_full.gif -coalesce -repage 0x0 -crop $(synthesizer_crop) -resize $(synthesizer_size) +repage temp_frame%03d.png
-	# Frames: 0..143
+	magick originals/baby_globe_synthesizer_full.gif $(resize_gif) \
+		-crop $(synthesizer_crop) -resize $(synthesizer_size) \
+		+repage temp_frame%04d.png
+	# Total frames: 0..143
 	# This one is made up of frames 0..47 of the full animation. Remove the rest.
-	for i in $$(seq 48 143); do rm temp_frame"$$(printf "%03d" "$$i")".png; done
-	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_synthesizer.gif
+	for i in $$(seq 48 143); do rm temp_frame"$$(printf "%04d" "$$i")".png; done
+	magick -delay $(recompile_delay) temp_frame*.png \
+		$(recompile_frames) baby_globe_synthesizer.gif
 	rm temp_frame*.png
 
 baby_globe_synthesizer_click.gif:
-	magick originals/baby_globe_synthesizer_full.gif -coalesce -repage 0x0 -crop $(synthesizer_crop) -resize $(synthesizer_size) +repage temp_frame%04d.png
-	# Frames: 0..143
+	magick originals/baby_globe_synthesizer_full.gif $(resize_gif) \
+		-crop $(synthesizer_crop) -resize $(synthesizer_size) \
+		+repage temp_frame%04d.png
+	# Total frames: 0..143
 	# Move frames 0..47 to the end of the animation.
 	for i in $$(seq 0 47); do mv temp_frame{,1}"$$(printf "%04d" "$$i")".png; done
-	magick -delay 1x20 temp_frame*.png -background transparent -loop 0 -set dispose Background -fuzz 5% baby_globe_synthesizer_click.gif
+	magick -delay $(recompile_delay) temp_frame*.png \
+		$(recompile_frames) baby_globe_synthesizer_click.gif
 	rm temp_frame*.png
