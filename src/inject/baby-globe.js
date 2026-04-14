@@ -57,7 +57,7 @@ BabyGlobe.prototype = {
 
 			image.src = $urlOrNull(animation.name);
 			// Use the CSS animation to time the gif.
-			image.style.animation = animation.name + ' ' + animation.delay;
+			image.style.animation = 'babyglobe-interact ease-in ' + animation.delay;
 		});
 
 		const message = $make('div', {
@@ -73,22 +73,22 @@ BabyGlobe.prototype = {
 const BABY_GLOBES = [
 	new BabyGlobe('baby_globe_book'),
 	new BabyGlobe('baby_globe_camera', [
-		new Animation('baby_globe_camera_click', 'ease-in 1000ms'),
+		new Animation('baby_globe_camera_click', '1000ms'),
 	]),
 	new BabyGlobe('baby_globe_celebration', [
-		new Animation('baby_globe_celebration_balloons', 'ease-in 4900ms'),
-		new Animation('baby_globe_celebration_confetti', 'ease-in 2350ms'),
+		new Animation('baby_globe_celebration_balloons', '4900ms'),
+		new Animation('baby_globe_celebration_confetti', '2350ms'),
 	]),
 	new BabyGlobe('baby_globe_dream'),
 	new BabyGlobe('baby_globe_headphones', [
-		new Animation('baby_globe_headphones_click', 'ease-in 2700ms'),
+		new Animation('baby_globe_headphones_click', '2700ms'),
 	]),
 	new BabyGlobe('baby_globe_laptop'),
 	new BabyGlobe('baby_globe_newspaper'),
 	new BabyGlobe('baby_globe_outer_space'),
 	new BabyGlobe('baby_globe_phone'),
 	new BabyGlobe('baby_globe_synthesizer', [
-		new Animation('baby_globe_synthesizer_click', 'ease-in 4900ms'),
+		new Animation('baby_globe_synthesizer_click', '4900ms'),
 	]),
 ];
 

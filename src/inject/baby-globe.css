@@ -1,40 +1,4 @@
-@keyframes baby_globe_camera_click {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes baby_globe_celebration_balloons {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes baby_globe_celebration_confetti {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes baby_globe_headphones_click {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes baby_globe_synthesizer_click {
+@keyframes babyglobe-interact {
 	0% {
 		transform: scale(1);
 	}
