@@ -5,6 +5,8 @@ const $make = (type, o) => {
 	return $extend(t, o);
 };
 
+const $listen = (el, es, fn) => { for (let e of es) { el.addEventListener(e, fn); } };
+
 const $sample = (a) => a[Math.floor(Math.random() * a.length)];
 
 const $urlOrNull = (u) => {
@@ -26,19 +28,24 @@ function BabyGlobe(idle, animations) {
 
 BabyGlobe.prototype = {
 	bind: function(root) {
-		const element = $make('div', {
+		const extension = $make('div', {
 			className: 'babyglobe-ext',
 		});
 
+		// This element controls the extra drag offset.
+		const offset = $make('div', {});
+		extension.appendChild(offset);
+
 		const image = $make('img', {
 			src: $urlOrNull(this.idle),
-			className: 'babyglobe-image',
+			className: 'babyglobe-image babyglobe-draggable',
 		});
+		offset.appendChild(image);
+
 		// Indicate that this Baby Globe is clickable.
 		if (this.animations.length) {
 			image.classList.add('babyglobe-clickable');
 		}
-		element.appendChild(image);
 
 		image.addEventListener('animationend', evt => {
 			// Reset animation after it ends.
@@ -64,9 +71,90 @@ BabyGlobe.prototype = {
 			textContent: '',
 			className: 'babyglobe-message',
 		});
-		element.appendChild(message);
+		extension.appendChild(message);
 
-		root.appendChild(element);
+		// Put Baby Globe in the correct corner (anchor).
+		extension.style.top = 'unset';
+		extension.style.bottom = '0';
+		extension.style.left = '0';
+		extension.style.right = 'unset';
+
+		// Add dragging functionality.
+		(() => {
+			let dragStartX, dragStartY;
+
+			image.addEventListener('dragstart', evt => {
+				evt.preventDefault();
+				evt.stopPropagation();
+
+				dragStartX = evt.pageX;
+				dragStartY = evt.pageY;
+
+				image.classList.add('babyglobe-dragging');
+			});
+
+			function dragMove(evt) {
+				if (dragStartX == null) return;
+				if (dragStartY == null) return;
+
+				let x = evt.pageX - dragStartX;
+				let y = evt.pageY - dragStartY;
+
+				offset.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+			}
+			$listen(root, ['touchmove', 'mousemove'], dragMove);
+
+			function dragStop(evt) {
+				if (dragStartX == null) return;
+				if (dragStartY == null) return;
+
+				dragStartX = null;
+				dragStartY = null;
+
+				let rootRect = root.getBoundingClientRect();
+				let offsetRect = offset.getBoundingClientRect();
+				
+				// dragAnchor{X,Y} point to the anchor.
+
+				// 1. Calculate where the new anchor is.
+				let anchorX = evt.pageX / rootRect.width;
+				let anchorY = evt.pageY / rootRect.height;
+				
+				// 2. Calculate the offset to that anchor.
+				let x = 0, y = 0;
+				if (anchorX < 0.5) {
+					// left
+					x = offsetRect.left - rootRect.left;
+					extension.style.left = '0';
+					extension.style.right = 'unset';
+				} else {
+					// right
+					x = offsetRect.right - rootRect.right;
+					extension.style.right = '0';
+					extension.style.left = 'unset';
+				}
+				if (anchorY < 0.5) {
+					// top
+					y = offsetRect.top - rootRect.top;
+					extension.style.top = '0';
+					extension.style.bottom = 'unset';
+				} else {
+					// bottom
+					y = offsetRect.bottom - rootRect.bottom;
+					extension.style.bottom = '0';
+					extension.style.top = 'unset';
+				}
+
+				console.log(x, y);
+				extension.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+				offset.style.transform = '';
+				image.classList.remove('babyglobe-dragging');
+			}
+			$listen(root, ['touchend', 'mouseleave', 'mouseup'], dragStop);
+			$listen(image, ['dragend', 'mouseup'], dragStop);
+		})();
+
+		root.appendChild(extension);
 	},
 }
 

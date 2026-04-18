@@ -11,16 +11,24 @@
 	cursor: pointer;
 }
 
+.babyglobe-draggable {
+	transform: scale(1);
+	transition: transform 200ms;
+
+	user-select: none;
+}
+
+.babyglobe-draggable.babyglobe-dragging {
+	transform: scale(1.2);
+	cursor: grabbing;
+}
+
 .babyglobe-ext {
 	position: fixed;
-	bottom: 0;
-	left: 0;
 	z-index: 999999;
 	text-wrap: nowrap;
 
 	padding: 2%;
-
-	transform: scale(1) rotate(0deg);
 }
 
 .babyglobe-message {

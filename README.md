@@ -25,8 +25,10 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
     - [ ] Unsure which context this would work
 - [x] Add click animations to relevant Baby Globes
 - [ ] Create a proper grownup browser extension
-  - [ ] In progress: Submit the extension to Mozilla addons
-- [ ] Make Baby Globe moveable with the mouse
+  - [x] Submit the extension to Mozilla addons
+  - [ ] Do the same for Chrome
+- [ ] Make Baby Globe resizeable
+- [ ] In progress: Make Baby Globe moveable with the mouse / touch
 - [ ] Make Baby Globe contextually thematically aware, appearing a certain way based on the website.
   - Example: Play music on a music site, read a book on a book webpage
 
