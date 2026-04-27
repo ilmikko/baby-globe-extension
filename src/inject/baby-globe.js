@@ -145,7 +145,6 @@ BabyGlobe.prototype = {
 					extension.style.top = 'unset';
 				}
 
-				console.log(x, y);
 				extension.style.transform = 'translate(' + x + 'px,' + y + 'px)';
 				offset.style.transform = '';
 				image.classList.remove('babyglobe-dragging');
