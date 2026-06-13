@@ -1,10 +1,10 @@
 async function SettingsChanged() {
 	console.log("Saving settings:", SETTINGS);
-	await chrome.storage.local.set({'settings': JSON.stringify(SETTINGS)});
+	await browser.storage.local.set({'settings': JSON.stringify(SETTINGS)});
 
 	// Notify content script of the change
-	const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-	chrome.tabs.sendMessage(tab.id, {
+	const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+	browser.tabs.sendMessage(tab.id, {
 		type: 'SETTINGS_CHANGED',
 		data: SETTINGS,
 	});
@@ -14,7 +14,7 @@ async function LoadSettings() {
 	try {
 		// Load saved settings.
 		console.log("Loading saved settings...");
-		const { settings } = await chrome.storage.local.get('settings');
+		const { settings } = await browser.storage.local.get('settings');
 		console.log("Parsing JSON:", settings);
 		let loaded = JSON.parse(settings);
 		SETTINGS.size = loaded.size;

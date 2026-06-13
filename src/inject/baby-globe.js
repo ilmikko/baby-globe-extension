@@ -19,7 +19,7 @@ const $urlOrNull = (u) => {
 async function LoadSettings() {
 	try {
 		// Load saved settings.
-		const { settings } = await chrome.storage.local.get('settings');
+		const { settings } = await browser.storage.local.get('settings');
 		let loaded = JSON.parse(settings);
 		SETTINGS.size = loaded.size;
 	} catch(err) {
@@ -55,7 +55,7 @@ function ApplySettings(extension, settings) {
 }
 
 // Listen for setting changes from popup
-chrome.runtime.onMessage.addListener((request) => {
+browser.runtime.onMessage.addListener((request) => {
   if (request.type === 'SETTINGS_CHANGED') {
     ApplySettings(BABY_GLOBE, request.data);
   }
