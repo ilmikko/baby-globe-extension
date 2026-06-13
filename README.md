@@ -22,15 +22,16 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
   - [ ] Neutral Baby Globe (?)
     - [ ] Figure out how to give Neutral Baby Globe a transparent background
   - [ ] Flashlight Baby Globe (?)
-    - [ ] Unsure which context this would work
+    - [ ] Unsure in which context this would work
 - [x] Add click animations to relevant Baby Globes
 - [ ] Create a proper grownup browser extension
   - [x] Submit the extension to Mozilla addons
   - [ ] Do the same for Chrome
 - [ ] Make Baby Globe resizeable
-- [ ] In progress: Make Baby Globe moveable with the mouse / touch
+- [x] Make Baby Globe moveable with the mouse / touch
 - [ ] Make Baby Globe contextually thematically aware, appearing a certain way based on the website.
   - Example: Play music on a music site, read a book on a book webpage
+- [ ] Make Baby Globe appear/disappear for certain websites
 
 ## Installation
 
@@ -55,6 +56,10 @@ For full attribution, please see: https://commons.wikimedia.org/wiki/Baby_Globe
 The source code of this project is licensed using the GPL-3.0 license.
 
 ## Changelog
+
+### v1.1
+
+- Baby Globe is moveable to a temporary location with the mouse
 
 ### v1.0
 
