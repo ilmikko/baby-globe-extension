@@ -27,7 +27,7 @@ I was saddened by the fact that the Baby Globe was no longer there after the bir
 - [ ] Create a proper grownup browser extension
   - [x] Submit the extension to Mozilla addons
   - [ ] Do the same for Chrome
-- [ ] Make Baby Globe resizeable
+- [x] Make Baby Globe resizeable
 - [x] Make Baby Globe moveable with the mouse / touch
 - [ ] Make Baby Globe contextually thematically aware, appearing a certain way based on the website.
   - Example: Play music on a music site, read a book on a book webpage
