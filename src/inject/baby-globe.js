@@ -16,17 +16,10 @@ const $urlOrNull = (u) => {
 	return browser.runtime.getURL('img/babyglobe/' + u + '.gif') + '?r=' + Math.random();
 }
 
-// Set defaults.
-let SETTINGS = {
-	size: "medium",
-};
-
 async function LoadSettings() {
 	try {
 		// Load saved settings.
-		console.log("Loading saved settings...");
 		const { settings } = await chrome.storage.local.get('settings');
-		console.log("Parinsg JSON:", settings);
 		let loaded = JSON.parse(settings);
 		SETTINGS.size = loaded.size;
 	} catch(err) {
@@ -40,8 +33,6 @@ async function LoadSettings() {
 let BABY_GLOBE = null;
 
 function ApplySettings(extension, settings) {
-	console.log("Apply settings to extension: ", settings);
-
 	switch (settings.size) {
 		case 'small':
 			extension.classList.add('babyglobe-size-small');

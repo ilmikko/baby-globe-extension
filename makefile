@@ -11,6 +11,5 @@ build:
 		manifest.json \
 		img/icon.*.png \
 		img/babyglobe/*.gif \
-		src/popup/* \
-		src/inject/* \
+		src/* \
 		;

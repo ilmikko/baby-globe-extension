@@ -1,8 +1,3 @@
-// Set defaults.
-let SETTINGS = {
-	size: "medium",
-};
-
 async function SettingsChanged() {
 	console.log("Saving settings:", SETTINGS);
 	await chrome.storage.local.set({'settings': JSON.stringify(SETTINGS)});
@@ -20,7 +15,7 @@ async function LoadSettings() {
 		// Load saved settings.
 		console.log("Loading saved settings...");
 		const { settings } = await chrome.storage.local.get('settings');
-		console.log("Parinsg JSON:", settings);
+		console.log("Parsing JSON:", settings);
 		let loaded = JSON.parse(settings);
 		SETTINGS.size = loaded.size;
 	} catch(err) {
