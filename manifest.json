@@ -13,6 +13,7 @@
 			"css": ["src/inject/baby-globe.css"]
 		}
 	],
+	"permissions": ["storage"],
 	"web_accessible_resources": [
 		{
 			"matches": ["<all_urls>"],

@@ -16,6 +16,21 @@
 	pointer-events: all;
 }
 
+.babyglobe-size-small img {
+	max-width: 75%;
+	max-height: 75%;
+}
+
+.babyglobe-size-medium img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.babyglobe-size-large img {
+	min-width: 125%;
+	min-height: 125%;
+}
+
 .babyglobe-draggable {
 	transform: scale(1);
 	transition: transform 200ms;

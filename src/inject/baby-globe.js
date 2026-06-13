@@ -16,6 +16,60 @@ const $urlOrNull = (u) => {
 	return browser.runtime.getURL('img/babyglobe/' + u + '.gif') + '?r=' + Math.random();
 }
 
+// Set defaults.
+let SETTINGS = {
+	size: "medium",
+};
+
+async function LoadSettings() {
+	try {
+		// Load saved settings.
+		console.log("Loading saved settings...");
+		const { settings } = await chrome.storage.local.get('settings');
+		console.log("Parinsg JSON:", settings);
+		let loaded = JSON.parse(settings);
+		SETTINGS.size = loaded.size;
+	} catch(err) {
+		console.log("Failed to load saved settings:", err);
+	}
+
+	ApplySettings(BABY_GLOBE, SETTINGS);
+}
+
+// This points to the "current" baby globe.
+let BABY_GLOBE = null;
+
+function ApplySettings(extension, settings) {
+	console.log("Apply settings to extension: ", settings);
+
+	switch (settings.size) {
+		case 'small':
+			extension.classList.add('babyglobe-size-small');
+			extension.classList.remove('babyglobe-size-medium');
+			extension.classList.remove('babyglobe-size-large');
+			break;
+		case 'medium': default:
+			extension.classList.remove('babyglobe-size-small');
+			extension.classList.add('babyglobe-size-medium');
+			extension.classList.remove('babyglobe-size-large');
+			break;
+		case 'large':
+			extension.classList.remove('babyglobe-size-small');
+			extension.classList.remove('babyglobe-size-medium');
+			extension.classList.add('babyglobe-size-large');
+			break;
+	}
+
+	SETTINGS = settings;
+}
+
+// Listen for setting changes from popup
+chrome.runtime.onMessage.addListener((request) => {
+  if (request.type === 'SETTINGS_CHANGED') {
+    ApplySettings(BABY_GLOBE, request.data);
+  }
+});
+
 function Animation(name, delay) {
 	this.name = name;
 	this.delay = delay;
@@ -154,6 +208,8 @@ BabyGlobe.prototype = {
 		})();
 
 		root.appendChild(extension);
+
+		return extension;
 	},
 }
 
@@ -179,4 +235,7 @@ const BABY_GLOBES = [
 	]),
 ];
 
-$sample(BABY_GLOBES).bind(document.body);
+BABY_GLOBE = $sample(BABY_GLOBES).bind(document.body);
+
+// Load the settings and apply them.
+LoadSettings();
