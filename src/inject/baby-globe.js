@@ -156,40 +156,43 @@ BabyGlobe.prototype = {
 				dragStartX = null;
 				dragStartY = null;
 
-				let rootRect = root.getBoundingClientRect();
 				let offsetRect = offset.getBoundingClientRect();
-				
+
 				// dragAnchor{X,Y} point to the anchor.
 
 				// 1. Calculate where the new anchor is.
-				let anchorX = evt.pageX / rootRect.width;
-				let anchorY = evt.pageY / rootRect.height;
+				let width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+				let height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+				let anchorX = evt.pageX / width;
+				let anchorY = evt.pageY / height;
 				
 				// 2. Calculate the offset to that anchor.
 				let x = 0, y = 0;
 				if (anchorX < 0.5) {
 					// left
-					x = offsetRect.left - rootRect.left;
+					x = offsetRect.left;
 					extension.style.left = '0';
 					extension.style.right = 'unset';
 				} else {
 					// right
-					x = offsetRect.right - rootRect.right;
+					x = - (width - offsetRect.right);
 					extension.style.right = '0';
 					extension.style.left = 'unset';
 				}
 				if (anchorY < 0.5) {
 					// top
-					y = offsetRect.top - rootRect.top;
+					y = offsetRect.top;
 					extension.style.top = '0';
 					extension.style.bottom = 'unset';
 				} else {
 					// bottom
-					y = offsetRect.bottom - rootRect.bottom;
+					y = - (height - offsetRect.bottom);
 					extension.style.bottom = '0';
 					extension.style.top = 'unset';
 				}
 
+				console.log("Anchors ", anchorX, anchorY);
+				console.log("Transform by ", x, y);
 				extension.style.transform = 'translate(' + x + 'px,' + y + 'px)';
 				offset.style.transform = '';
 				image.classList.remove('babyglobe-dragging');
@@ -225,6 +228,9 @@ const BABY_GLOBES = [
 		new Animation('baby_globe_synthesizer_click', '4900ms'),
 	]),
 ];
+
+// Remove any previous Baby Globes.
+Array.from(document.querySelectorAll('.babyglobe-ext')).map(babyglobe => babyglobe.parentNode.removeChild(babyglobe));
 
 BABY_GLOBE = $sample(BABY_GLOBES).bind(document.body);
 
