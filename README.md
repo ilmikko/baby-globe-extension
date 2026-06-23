@@ -57,6 +57,11 @@ The source code of this project is licensed using the GPL-3.0 license.
 
 ## Changelog
 
+### v1.2
+
+- Baby Globe is resizeable.
+- Fixed a bug where Baby Globe would move in an unexpected manner.
+
 ### v1.1
 
 - Baby Globe is moveable to a temporary location with the mouse
